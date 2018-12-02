@@ -1,0 +1,104 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "battletank (Debug)",
+			"request": "launch",
+			"preLaunchTask": "battletank Linux Debug Build",
+			"program": "/home/preet/Unreal Projects/battletank/Binaries/Linux/battletank-Linux-Debug",
+			"args": [
+			],
+			"cwd": "/home/preet/GameEngine/UnrealEngine",
+			"type": "lldb"
+		},
+		{
+			"name": "battletank (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "battletank Linux DebugGame Build",
+			"program": "/home/preet/Unreal Projects/battletank/Binaries/Linux/battletank-Linux-DebugGame",
+			"args": [
+			],
+			"cwd": "/home/preet/GameEngine/UnrealEngine",
+			"type": "lldb"
+		},
+		{
+			"name": "battletank (Development)",
+			"request": "launch",
+			"preLaunchTask": "battletank Linux Development Build",
+			"program": "/home/preet/Unreal Projects/battletank/Binaries/Linux/battletank",
+			"args": [
+			],
+			"cwd": "/home/preet/GameEngine/UnrealEngine",
+			"type": "lldb"
+		},
+		{
+			"name": "battletank (Shipping)",
+			"request": "launch",
+			"preLaunchTask": "battletank Linux Shipping Build",
+			"program": "/home/preet/Unreal Projects/battletank/Binaries/Linux/battletank-Linux-Shipping",
+			"args": [
+			],
+			"cwd": "/home/preet/GameEngine/UnrealEngine",
+			"type": "lldb"
+		},
+		{
+			"name": "battletank (Test)",
+			"request": "launch",
+			"preLaunchTask": "battletank Linux Test Build",
+			"program": "/home/preet/Unreal Projects/battletank/Binaries/Linux/battletank-Linux-Test",
+			"args": [
+			],
+			"cwd": "/home/preet/GameEngine/UnrealEngine",
+			"type": "lldb"
+		},
+		{
+			"name": "battletankEditor (Debug)",
+			"request": "launch",
+			"preLaunchTask": "battletankEditor Linux Debug Build",
+			"program": "/home/preet/GameEngine/UnrealEngine/Engine/Binaries/Linux/UE4Editor-Linux-Debug",
+			"args": [
+				"/home/preet/Unreal Projects/battletank/battletank.uproject"
+			],
+			"cwd": "/home/preet/GameEngine/UnrealEngine",
+			"type": "lldb"
+		},
+		{
+			"name": "battletankEditor (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "battletankEditor Linux DebugGame Build",
+			"program": "/home/preet/GameEngine/UnrealEngine/Engine/Binaries/Linux/UE4Editor",
+			"args": [
+				"/home/preet/Unreal Projects/battletank/battletank.uproject"
+			],
+			"cwd": "/home/preet/GameEngine/UnrealEngine",
+			"type": "lldb"
+		},
+		{
+			"name": "battletankEditor (Development)",
+			"request": "launch",
+			"preLaunchTask": "battletankEditor Linux Development Build",
+			"program": "/home/preet/GameEngine/UnrealEngine/Engine/Binaries/Linux/UE4Editor",
+			"args": [
+				"/home/preet/Unreal Projects/battletank/battletank.uproject"
+			],
+			"cwd": "/home/preet/GameEngine/UnrealEngine",
+			"type": "lldb"
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "mono",
+			"request": "launch",
+			"program": "/home/preet/GameEngine/UnrealEngine/Engine/Binaries/DotNET/UnrealBuildTool.exe",
+			"console": "internalConsole",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=\"/home/preet/Unreal Projects/battletank/battletank.uproject\"",
+				"-game",
+				"-engine"
+			],
+			"internalConsoleOptions": "openOnSessionStart",
+			"cwd": "/home/preet/GameEngine/UnrealEngine"
+		}
+	]
+}

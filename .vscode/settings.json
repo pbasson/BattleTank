@@ -1,0 +1,7 @@
+{
+	"files.exclude": {
+		"/home/preet/Unreal Projects/battletank/.vscode": true,
+		"/home/preet/Unreal Projects/battletank/Content": true,
+		"/home/preet/Unreal Projects/battletank/Intermediate": true
+	}
+}

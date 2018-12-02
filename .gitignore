@@ -1,0 +1,17 @@
+#############################
+#Unreal GitIgnore Files#
+#############################
+Build/* 
+Binaries/*
+DerivedDataCache/*
+Intermediate/*
+Saved/*
+*.sln
+.vs/
+
+BuildingEscape.VC.VC.opendb
+BuildingEscape.VC.db
+Content/StarterContent/*
+CMakeLists.txt
+.*/vscode/*
+.*/kdev4/*
