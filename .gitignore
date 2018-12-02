@@ -13,5 +13,4 @@ BuildingEscape.VC.VC.opendb
 BuildingEscape.VC.db
 Content/StarterContent/*
 CMakeLists.txt
-.*/vscode/*
-.*/kdev4/*
+.*/
