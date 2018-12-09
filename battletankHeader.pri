@@ -10904,7 +10904,9 @@ HEADERS += \
 	"$$unrealRootPath/Engine/Plugins/Tests/RuntimeTests/Source/RuntimeTests/Public/RuntimeTests.h" \
 	"$$unrealRootPath/Engine/Plugins/Tests/RuntimeTests/Source/RuntimeTests/Public/ShaderComparisonTests.h" \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Public/ScreenshotTools.h" \
+	"$$battletankRootPath/Source/battletank/TankPlayerController.h" \
 	"$$battletankRootPath/Source/battletank/battletank.h" \
 	"$$battletankRootPath/Source/battletank/battletankGameModeBase.h" \
+	"$$battletankRootPath/Source/battletank/Public/Tank.h" \
  
 

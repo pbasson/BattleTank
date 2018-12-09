@@ -2355,9 +2355,26 @@ INCLUDEPATH += \
 	/home/preet/GameEngine/UnrealEngine/Engine/Plugins/Tests/ScreenshotTools/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/ScreenshotTools \
 	/home/preet/GameEngine/UnrealEngine/Engine/Plugins/Tests/ScreenshotTools/Source \
 	/home/preet/GameEngine/UnrealEngine/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Public \
-	Intermediate/Build/Linux/B4D820EA/battletankEditor/Inc/battletank \
-	Source \
-	Source/battletank \
+	Source/battletank/Private \
+	Intermediate/Build/Linux/B4D820EA/battletankEditor/Inc/Engine \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/AI \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/AI/Navigation \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Analytics \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Animation \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Curves \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/EdGraph \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Internationalization \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Net \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/PacketHandlers \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Performance \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics/Experimental \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics/ImmediatePhysics \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/ProfilingDebugging \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Rendering \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Slate \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Tests \
+	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/VisualLogger \
 	Intermediate/Build/Linux/B4D820EA/battletankEditor/Inc/Core \
 	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Core \
 	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Core/Public/Algo \
@@ -2395,25 +2412,6 @@ INCLUDEPATH += \
 	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/CoreUObject/Public/Serialization \
 	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/CoreUObject/Public/Serialization/Formatters \
 	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/CoreUObject/Public/Templates \
-	Intermediate/Build/Linux/B4D820EA/battletankEditor/Inc/Engine \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/AI \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/AI/Navigation \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Analytics \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Animation \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Curves \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/EdGraph \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Internationalization \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Net \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/PacketHandlers \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Performance \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics/Experimental \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Physics/ImmediatePhysics \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/ProfilingDebugging \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Rendering \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Slate \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/Tests \
-	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/Engine/Public/VisualLogger \
 	Intermediate/Build/Linux/B4D820EA/battletankEditor/Inc/ApplicationCore \
 	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/ApplicationCore \
 	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/ApplicationCore/Public/GenericPlatform \
@@ -2667,4 +2665,8 @@ INCLUDEPATH += \
 	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/AudioMixer \
 	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/AudioMixer/Public/Components \
 	/home/preet/GameEngine/UnrealEngine/Engine/Source/Runtime/AudioMixer/Public/DSP \
+	Intermediate/Build/Linux/B4D820EA/battletankEditor/Inc/battletank \
+	Source \
+	Source/battletank/Public \
+	Source/battletank \
 

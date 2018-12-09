@@ -8412,7 +8412,9 @@ SOURCES += \
 	"$$unrealRootPath/Engine/Plugins/Tests/RuntimeTests/Source/RuntimeTests/Private/Shaders/ShaderComparisonTests.cpp" \
 	"$$unrealRootPath/Engine/Plugins/Tests/RuntimeTests/Source/RuntimeTests/Private/Slate/RichTextMarkupProcessingTest.cpp" \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotTools.cpp" \
+	"$$battletankRootPath/Source/battletank/TankPlayerController.cpp" \
 	"$$battletankRootPath/Source/battletank/battletank.cpp" \
 	"$$battletankRootPath/Source/battletank/battletankGameModeBase.cpp" \
+	"$$battletankRootPath/Source/battletank/Private/Tank.cpp" \
  
 
