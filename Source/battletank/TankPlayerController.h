@@ -22,4 +22,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	void AimTowardsCrossHair();
+	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
+
+
 };

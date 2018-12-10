@@ -3,6 +3,7 @@
 
 #include "TankPlayerController.h"
 
+
 void ATankPlayerController::BeginPlay()
 {
     Super::BeginPlay();
@@ -24,6 +25,18 @@ void ATankPlayerController::Tick(float DeltaTime)
 void ATankPlayerController::AimTowardsCrossHair()
 {
 	if (!GetControllerTank()) { return;  }
+
+	FVector OutHitLocation;
+	if (GetSightRayHitLocation(OutHitLocation))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("HitLocation: %s"), *(OutHitLocation.ToString()));
+	}
+}
+
+bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) const
+{
+	OutHitLocation = FVector(1.0);
+	return true;
 }
 
 ATank* ATankPlayerController::GetControllerTank() const
