@@ -43,6 +43,18 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) cons
 	return true;
 }
 
+bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector & LookDirection) const
+{
+	FVector CameraWorldLocation;
+	if (DeprojectScreenPositionToWorld(ScreenLocation.X, ScreenLocation.Y, CameraWorldLocation, LookDirection))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ScreenLocation: %s"), *LookDirection.ToString());
+	}
+	return false;
+}
+
+
+
 ATank* ATankPlayerController::GetControllerTank() const
 {
     return Cast<ATank>(GetPawn());
