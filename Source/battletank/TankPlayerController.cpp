@@ -7,14 +7,9 @@
 void ATankPlayerController::BeginPlay()
 {
     Super::BeginPlay();
-
-    auto ControlledTank = GetControllerTank();
-    if (!ControlledTank) {
-        UE_LOG(LogTemp, Warning, TEXT("PlayerController Not Found"));
-    }
-    else {UE_LOG(LogTemp, Warning, TEXT("PlayerController: %s"), *(ControlledTank->GetName()));}
-
+	GetControlledTank();
 }
+
 
 void ATankPlayerController::Tick(float DeltaTime)
 {
@@ -22,42 +17,53 @@ void ATankPlayerController::Tick(float DeltaTime)
 	AimTowardsCrossHair();
 }
 
+/*	CODE_PLAN: 
+	AimTowardsCrossHair()
+		GetSightRayHitLocation(OutHitLocation)
+			GetLookDirection(ScreenLocation, LookDirection) 
+*/
+
 void ATankPlayerController::AimTowardsCrossHair()
 {
 	if (!GetControllerTank()) { return;  }
 
 	FVector OutHitLocation;
-	if (GetSightRayHitLocation(OutHitLocation))
-	{
-	//	UE_LOG(LogTemp, Warning, TEXT("HitLocation: %s"), *(OutHitLocation.ToString()));
-	}
+	if (GetSightRayHitLocation(OutHitLocation)){}
 }
+
+
 
 bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) const
 {
 	int32 ViewportSizeX, ViewportSizeY;
 	GetViewportSize(ViewportSizeX, ViewportSizeY);
 	auto ScreenLocation = FVector2D(ViewportSizeX * CrossHairXLocation, ViewportSizeY * CrossHairYLocation);
-//	UE_LOG(LogTemp, Warning, TEXT("ScreenLocation: %s"), *ScreenLocation.ToString());
 
+	FVector LookDirection; 
+	if (GetLookDirection(ScreenLocation, LookDirection))
+	{ UE_LOG(LogTemp, Warning, TEXT("Location: %s"), *LookDirection.ToString()); }
 	return true;
 }
 
 bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector & LookDirection) const
 {
 	FVector CameraWorldLocation;
-	if (DeprojectScreenPositionToWorld(ScreenLocation.X, ScreenLocation.Y, CameraWorldLocation, LookDirection))
-	{
-		UE_LOG(LogTemp, Warning, TEXT("ScreenLocation: %s"), *LookDirection.ToString());
-	}
-	return false;
+	return DeprojectScreenPositionToWorld(ScreenLocation.X, ScreenLocation.Y, CameraWorldLocation, LookDirection); 
+}
+
+void ATankPlayerController::GetControlledTank() const
+{
+	auto ControlledTank = GetControllerTank();
+
+	if (!ControlledTank) { UE_LOG(LogTemp, Warning, TEXT("PlayerController Not Found")); }
+	else { UE_LOG(LogTemp, Warning, TEXT("PlayerController: %s"), *(ControlledTank->GetName())); }
 }
 
 
 
 ATank* ATankPlayerController::GetControllerTank() const
-{
-    return Cast<ATank>(GetPawn());
+{ 
+	return Cast<ATank>(GetPawn()); 
 }
 
 
