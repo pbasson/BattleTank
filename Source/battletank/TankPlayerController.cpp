@@ -28,26 +28,35 @@ void ATankPlayerController::AimTowardsCrossHair()
 	if (!GetControllerTank()) { return;  }
 
 	FVector OutHitLocation;
-	if (GetSightRayHitLocation(OutHitLocation)){}
+	if (GetSightRayHitLocation(OutHitLocation))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("HitLocation: %s: "), *OutHitLocation.ToString());
+	}
 }
 
 
 
 bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) const
 {
-	int32 ViewportSizeX, ViewportSizeY;
+	int32 ViewportSizeX, ViewportSizeY; // Values are populated from below function
+	// Gets the size of the HUD canvas for player Controller : Return 0 If no HUD
 	GetViewportSize(ViewportSizeX, ViewportSizeY);
 	auto ScreenLocation = FVector2D(ViewportSizeX * CrossHairXLocation, ViewportSizeY * CrossHairYLocation);
 
 	FVector LookDirection; 
 	if (GetLookDirection(ScreenLocation, LookDirection))
-	{ UE_LOG(LogTemp, Warning, TEXT("Location: %s"), *LookDirection.ToString()); }
+	{
+		GetLookVectorHitLocation(LookDirection, OutHitLocation);
+		//UE_LOG(LogTemp, Warning, TEXT("Location: %s"), *LookDirection.ToString()); 
+	}
 	return true;
 }
+
 
 bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector & LookDirection) const
 {
 	FVector CameraWorldLocation;
+	// Finds the Screen Size based on position & direction in World Space 
 	return DeprojectScreenPositionToWorld(ScreenLocation.X, ScreenLocation.Y, CameraWorldLocation, LookDirection); 
 }
 
@@ -57,6 +66,21 @@ void ATankPlayerController::GetControlledTank() const
 
 	if (!ControlledTank) { UE_LOG(LogTemp, Warning, TEXT("PlayerController Not Found")); }
 	else { UE_LOG(LogTemp, Warning, TEXT("PlayerController: %s"), *(ControlledTank->GetName())); }
+}
+
+bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const
+{
+	FHitResult HitResult; 
+	auto StartLocation = PlayerCameraManager->GetCameraLocation();
+	auto EndLocation = StartLocation + (LookDirection * LineTraceRange); 
+
+
+	if (GetWorld()->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECollisionChannel::ECC_Visibility))
+	{
+		HitLocation = HitResult.Location;
+		return true;
+	}
+	return false; 
 }
 
 

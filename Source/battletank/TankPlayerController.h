@@ -5,6 +5,8 @@
 #include "Tank.h"
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Engine/World.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "TankPlayerController.generated.h"
 
 /**
@@ -25,6 +27,10 @@ private:
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
 	void GetControlledTank() const;
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const; 
+	
+	UPROPERTY(EditAnywhere)
+	float LineTraceRange = 1000000.0f;
 
 	UPROPERTY(EditAnywhere)
 	float CrossHairXLocation = 0.5; 
