@@ -25,7 +25,7 @@ void ATankPlayerController::Tick(float DeltaTime)
 
 void ATankPlayerController::AimTowardsCrossHair()
 {
-	if (!GetControllerTank()) { return;  }
+	if (!GetControllerTank()) { return;  } // Checks if the Controller is assigned 
 
 	FVector OutHitLocation;
 	if (GetSightRayHitLocation(OutHitLocation))
@@ -45,10 +45,7 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) cons
 
 	FVector LookDirection; 
 	if (GetLookDirection(ScreenLocation, LookDirection))
-	{
-		GetLookVectorHitLocation(LookDirection, OutHitLocation);
-		//UE_LOG(LogTemp, Warning, TEXT("Location: %s"), *LookDirection.ToString()); 
-	}
+	{ GetLookVectorHitLocation(LookDirection, OutHitLocation); }
 	return true;
 }
 
