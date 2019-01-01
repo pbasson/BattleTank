@@ -7,6 +7,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "TankBarrel.h"
+#include "TankTurret.h"
 #include "Kismet/GameplayStaticsTypes.h"
 #include "TankAimingComponent.generated.h"
 
@@ -21,10 +22,12 @@ public:
 
 	UTankAimingComponent();
     void SetBarrelReference(UTankBarrel* BarrelToSet);
+    void SetTurretReference(UTankTurret* TurretToSet);
     void AimAt(FVector OutHitLocation, float LaunchSpeed);
 
 private:
 
     UTankBarrel* Barrel = nullptr;
+    UTankTurret* Turret = nullptr;
     void MoveBarrel(FVector AimDirection);
 };
