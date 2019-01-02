@@ -6,7 +6,7 @@
 UTankAimingComponent::UTankAimingComponent()
 {
 
-	PrimaryComponentTick.bCanEverTick = true;
+    PrimaryComponentTick.bCanEverTick = false;
 
     // ...
 }
