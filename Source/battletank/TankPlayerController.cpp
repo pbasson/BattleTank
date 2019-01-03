@@ -61,8 +61,6 @@ void ATankPlayerController::GetControlledTank() const
 {
 	auto ControlledTank = GetControllerTank();
 
-	if (!ControlledTank) { UE_LOG(LogTemp, Warning, TEXT("PlayerController Not Found")); }
-	else { UE_LOG(LogTemp, Warning, TEXT("PlayerController: %s"), *(ControlledTank->GetName())); }
 }
 
 bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const
