@@ -6,3 +6,8 @@
 
 
 
+
+void UTankMovementComponent::IntendMoveForward(float Throw)
+{
+    UE_LOG(LogTemp, Warning, TEXT("Throw: %f"), Throw);
+}
