@@ -18,5 +18,5 @@ public:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
-    float AcceptanceRadius = 1000;
+    float AcceptanceRadius = 10000;
 };
