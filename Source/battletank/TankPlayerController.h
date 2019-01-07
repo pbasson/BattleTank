@@ -17,9 +17,13 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
-private:
+protected: 
+    UFUNCTION(BlueprintCallable, Category = "Setup")
     ATank* GetControllerTank() const;
 	
+    
+    
+private:
     virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
