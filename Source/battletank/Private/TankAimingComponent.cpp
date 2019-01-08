@@ -1,5 +1,7 @@
 
 #include "TankAimingComponent.h"
+#include "TankBarrel.h"
+#include "TankTurret.h"
 #include "DrawDebugHelpers.h"
 
 // Sets default values for this component's properties
