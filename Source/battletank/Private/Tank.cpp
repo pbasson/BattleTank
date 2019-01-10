@@ -14,9 +14,15 @@ ATank::ATank()
 	PrimaryActorTick.bCanEverTick = false;
 }
 
+void ATank::BeginPlay()
+{
+	Super::BeginPlay();
+}
+
 
 void ATank::AimAt(FVector OutHitLocation)
 {
+	if (!TankAimingComponent) { return; }
     TankAimingComponent->AimAt(OutHitLocation, LaunchSpeed);
 }
 

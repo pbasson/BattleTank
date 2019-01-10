@@ -33,7 +33,7 @@ protected:
 
 private:
     ATank();
-
+	virtual void BeginPlay() override;
     UPROPERTY(EditDefaultsOnly, Category = Firing)
     float ReloadTimeInSeconds = 3.0f;
 
