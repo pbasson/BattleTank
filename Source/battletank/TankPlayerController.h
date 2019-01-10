@@ -9,9 +9,8 @@
 #include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "TankPlayerController.generated.h"
 
-/**
- * 
- */
+class UTankAimingComponent; 
+
 UCLASS()
 class BATTLETANK_API ATankPlayerController : public APlayerController
 {
@@ -21,6 +20,8 @@ protected:
     UFUNCTION(BlueprintCallable, Category = "Setup")
     ATank* GetControllerTank() const;
 	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
+	void FoundAimingComponent(UTankAimingComponent* AimComp);
     
     
 private:
