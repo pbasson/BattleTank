@@ -17,7 +17,7 @@ void ATankPlayerController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	auto AimingComponent = GetControllerTank()->FindComponentByClass<UTankAimingComponent>();
-	if (AimingComponent)
+	if (ensure(AimingComponent))
 	{
 		FoundAimingComponent(AimingComponent);
 	}
@@ -35,7 +35,7 @@ void ATankPlayerController::Tick(float DeltaTime)
 
 void ATankPlayerController::AimTowardsCrossHair()
 {
-	if (!GetControllerTank()) { return;  } // Checks if the Controller is assigned 
+	if (!ensure(GetControllerTank())) { return;  } // Checks if the Controller is assigned 
 
 	FVector OutHitLocation;
 	if (GetSightRayHitLocation(OutHitLocation))
