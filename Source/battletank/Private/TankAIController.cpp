@@ -17,10 +17,8 @@ void ATankAIController::Tick(float DeltaTime)
     auto ControlledTank = GetPawn();
  
 	if (!ensure(PlayerTank && ControlledTank)) { return; }
-    {
-        MoveToActor(PlayerTank, AcceptanceRadius);
-		auto AimingComponent = ControlledTank->FindComponentByClass<UTankAimingComponent>();
-		AimingComponent->AimAt(PlayerTank->GetActorLocation());
-    }
+    MoveToActor(PlayerTank, AcceptanceRadius);
+	auto AimingComponent = ControlledTank->FindComponentByClass<UTankAimingComponent>();
+	AimingComponent->AimAt(PlayerTank->GetActorLocation());
 
 }
