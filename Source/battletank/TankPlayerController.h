@@ -2,7 +2,6 @@
 
 #pragma once
 
-#include "Tank.h"
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
 #include "Engine/World.h"
@@ -17,8 +16,8 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 	GENERATED_BODY()
 
 protected: 
-    UFUNCTION(BlueprintCallable, Category = "Setup")
-    ATank* GetControllerTank() const;
+   // UFUNCTION(BlueprintCallable, Category = "Setup")
+
 	
 	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
 	void FoundAimingComponent(UTankAimingComponent* AimComp);
@@ -31,7 +30,7 @@ private:
 	void AimTowardsCrossHair();
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
-	void GetControlledTank() const;
+
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const; 
 	
     UPROPERTY(EditDefaultsOnly)

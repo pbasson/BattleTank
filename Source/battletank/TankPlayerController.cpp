@@ -4,46 +4,34 @@
 #include "TankAimingComponent.h"
 
 
-
-
 void ATankPlayerController::BeginPlay()
 {
     Super::BeginPlay();
-	GetControlledTank();
+	auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
+	if (!ensure(AimingComponent)) { return; }
+	FoundAimingComponent(AimingComponent);
 }
 
 
 void ATankPlayerController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	auto AimingComponent = GetControllerTank()->FindComponentByClass<UTankAimingComponent>();
-	if (ensure(AimingComponent))
-	{
-		FoundAimingComponent(AimingComponent);
-	}
-	else 
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Player Tank Not Found"));
-	}
+	AimTowardsCrossHair();
+
 }
 
-/*	CODE_PLAN: 
-	AimTowardsCrossHair()
-		GetSightRayHitLocation(OutHitLocation)
-			GetLookDirection(ScreenLocation, LookDirection) 
-*/
 
 void ATankPlayerController::AimTowardsCrossHair()
 {
-	if (!ensure(GetControllerTank())) { return;  } // Checks if the Controller is assigned 
+	auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
+	if (!ensure(AimingComponent)) { return; }
 
 	FVector OutHitLocation;
 	if (GetSightRayHitLocation(OutHitLocation))
 	{
-		GetControllerTank()->AimAt(OutHitLocation);
+		AimingComponent->AimAt(OutHitLocation);
 	}
 }
-
 
 
 bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) const
@@ -67,11 +55,6 @@ bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector &
 	return DeprojectScreenPositionToWorld(ScreenLocation.X, ScreenLocation.Y, CameraWorldLocation, LookDirection); 
 }
 
-void ATankPlayerController::GetControlledTank() const
-{
-	auto ControlledTank = GetControllerTank();
-
-}
 
 bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const
 {
@@ -87,13 +70,5 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 	}
 	return false; 
 }
-
-
-
-ATank* ATankPlayerController::GetControllerTank() const
-{ 
-	return Cast<ATank>(GetPawn()); 
-}
-
 
 
