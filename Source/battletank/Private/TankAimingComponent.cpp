@@ -31,7 +31,7 @@ void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 	if ((FPlatformTime::Seconds() - LastFireTime) < ReloadTimeInSeconds)
 	{ FiringStatus = EFiringStatus::Reloading; }
 	else if (IsBarrelMoving()) { FiringStatus = EFiringStatus::Aiming; }
-	else { FiringStatus = EFiringStatus::Reloading; }
+	else { FiringStatus = EFiringStatus::Locked; }
 }
 
 
