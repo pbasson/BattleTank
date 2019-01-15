@@ -41,18 +41,19 @@ protected:
 
 private:
 	UTankAimingComponent();
+    void MoveBarrel(FVector AimDirection);
 
-	UPROPERTY(EditDefaultsOnly, Category = Firing)
-	float LaunchSpeed = 10000;
+    UTankTurret* Turret = nullptr;
+    UTankBarrel* Barrel = nullptr;
 
 	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
 	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	float LaunchSpeed = 10000;
+
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
 	float ReloadTimeInSeconds = 3.0f;
 
 	double LastFireTime = 0;
-    void MoveBarrel(FVector AimDirection);
-    UTankBarrel* Barrel = nullptr;
-    UTankTurret* Turret = nullptr;
 };
