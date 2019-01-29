@@ -24,7 +24,6 @@ void UTankTrack::SetThrottle(float Throttle)
 
 void UTankTrack::OnHit(UPrimitiveComponent * HitComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, FVector NormalImpulse, const FHitResult & Hit)
 {
-	UE_LOG(LogTemp, Warning, TEXT("OnHit"));
 	DrivingTrack();
 	ApplySidewaysForce();
 	CurrentThrottle = 0;
@@ -42,7 +41,6 @@ void UTankTrack::ApplySidewaysForce()
 
 void UTankTrack::DrivingTrack()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Driving"));
     auto ForceApplied = GetForwardVector() * CurrentThrottle * TrackMaxDrivingForce;
     auto ForceLocation = GetComponentLocation();
     auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
