@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//PURPOSE: 
+//AUTHOR:PREETPAL_BASSON
+//GAME:BATTLETANK
 
 #pragma once
 
@@ -39,7 +41,7 @@ public:
 	EFiringStatus GetFiringStatus() const;
 	
 	UFUNCTION(BlueprintCallable, Category = "Fire")
-	int GetAmmoAmount() const;
+	int32 GetAmmoAmount() const;
 
 
 protected: 
@@ -66,7 +68,8 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = Firing)
 	float ReloadTimeInSeconds = 3.0f;
 
-	int8 AmmoAmount = 10; 
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	uint32 AmmoAmount = 10; 
 
 	double LastFireTime = 0;
 };

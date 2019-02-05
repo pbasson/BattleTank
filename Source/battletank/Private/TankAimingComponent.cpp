@@ -1,3 +1,6 @@
+//PURPOSE: 
+//AUTHOR:PREETPAL_BASSON
+//GAME:BATTLETANK
 
 #include "TankAimingComponent.h"
 #include "TankBarrel.h"
@@ -78,7 +81,7 @@ EFiringStatus UTankAimingComponent::GetFiringStatus() const
 	return FiringStatus;
 }
 
-int UTankAimingComponent::GetAmmoAmount() const
+int32 UTankAimingComponent::GetAmmoAmount() const
 {
 	return AmmoAmount;
 }
@@ -101,7 +104,7 @@ bool UTankAimingComponent::IsBarrelMoving()
 {
 	if (!ensure(Barrel)) { return false; }
 	auto BarrelLoc = Barrel->GetForwardVector();
-	return !BarrelLoc.Equals(AimDirection, 0.01);
+	return !BarrelLoc.Equals(AimDirection, 0.001);
 }
 
 void UTankAimingComponent::Fire()

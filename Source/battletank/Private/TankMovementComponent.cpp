@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//PURPOSE: 
+//AUTHOR:PREETPAL_BASSON
+//GAME:BATTLETANK
 
 
 #include "TankMovementComponent.h"

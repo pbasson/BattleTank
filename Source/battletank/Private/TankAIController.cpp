@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//PURPOSE: 
+//AUTHOR:PREETPAL_BASSON
+//GAME:BATTLETANK
 
 #include "TankAIController.h"
 #include "Tank.h"
@@ -20,9 +22,12 @@ void ATankAIController::Tick(float DeltaTime)
     MoveToActor(PlayerTank, AcceptanceRadius);
 	auto AimingComponent = ControlledTank->FindComponentByClass<UTankAimingComponent>();
 	AimingComponent->AimAt(PlayerTank->GetActorLocation());
-
+	if ((AimingComponent->GetFiringStatus() == EFiringStatus::Locked) || (AimingComponent->GetFiringStatus() == EFiringStatus::Aiming))
+	{
 		UE_LOG(LogTemp, Warning, TEXT("AI FIRED"));
 		AimingComponent->Fire();
+	}
+
 	
 
 }
