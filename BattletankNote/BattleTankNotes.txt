@@ -19,16 +19,39 @@
 ---------------------------------------------------------------------------------------------------
 ----------------------------------------##Code Plan##----------------------------------------------
 
--------------------------------------###Aiming Component###----------------------------------------
+-------------------------------------###Aiming###----------------------------------------
+
+--------------------------------####Player Controller####-----------------------------
+
+--------------------#####TankPlayerController####-------------------
+
++ [BeginPlay()]: {}
+    + [auto AimingComponent]: {UTankAimingComponent}
++ []: {}
++ []: {}
++ []: {}
++ []: {}
+
 
 + [Tick(float DeltaTime)]: {}
     + [AimTowardsCrossHair()]: {}
         + [if(!GetPawn())]: {Return;}
-        + [if(!ensure(AimingComponent))]: {Return;}
         + [auto AimingComponent]: {UTankAimingComponent}
-        + [if(GetSightRayHitLocation(OutHitLocation))]: {}
+        + [if(!ensure(AimingComponent))]: {Return;}
+        + [if(GetSightRayHitLocation(OutHitLocation))]: {
+            + [if(GetLookDirection(ScreenLocation, LookDirection))]: {
+                + [GetLookVectorHitLocation(LookDirection, OutHitLocation)]: {
+                    + [if(GetWorld()->LineTraceSingleByChannel(...))]: {return true}
+                    + [return false]: {}
+                } 
+                + [return DeprojectScreenPositionToWorld(...)]: {}
+                
+            }
+        }
+        + [AimingComponent->AimAt(OutHitLocation)]: {}
+
+--------------------#####TankAimingComponent####-------------------
             
-            + [AimingComponent->AimAt(OutHitLocation)]: {}
         
 + []: {}
 + []: {}
