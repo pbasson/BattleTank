@@ -39,7 +39,12 @@ AProjectile::AProjectile()
 void AProjectile::BeginPlay()
 {
 	Super::BeginPlay();
-	CollisionMesh->OnComponentHit.AddDynamic(this, &AProjectile::OnHit);
+    CollisionMesh->OnComponentHit.AddDynamic(this, &AProjectile::OnHit);
+}
+
+void AProjectile::OnTimerExpire()
+{
+    Destroy();
 }
 
 
@@ -54,5 +59,11 @@ void AProjectile::OnHit(UPrimitiveComponent * HitComponent, AActor * OtherActor,
 	LaunchBlast->Deactivate();
 	ImpactBlast->Activate();
     ExplosionForce->FireImpulse();
+
+    SetRootComponent(ImpactBlast);
+    CollisionMesh->DestroyComponent();
+
+    FTimerHandle Timer;
+    GetWorld()->GetTimerManager().SetTimer(Timer, this, &AProjectile::OnTimerExpire, DestroyDelay, false);
 }
 

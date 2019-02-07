@@ -38,6 +38,11 @@ protected:
     UPROPERTY(VisibleAnywhere)
     URadialForceComponent* ExplosionForce = nullptr;
 
+    UPROPERTY(EditDefaultsOnly, Category = "Setup")
+    float DestroyDelay = 10.0;
+
+    UFUNCTION()
+    void OnTimerExpire();
 
 public:	
 	
