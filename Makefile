@@ -2,7 +2,7 @@
 # *DO NOT EDIT*
 
 UNREALROOTPATH = /home/preet/GameEngine/UnrealEngine
-GAMEPROJECTFILE =/home/preet/Unreal Projects/battletank/battletank.uproject
+GAMEPROJECTFILE =/media/preet/PD2TB/Unreal Projects/battletank/battletank.uproject
 
 TARGETS = \
 	BlankProgram-Linux-Debug  \

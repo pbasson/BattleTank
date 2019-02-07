@@ -10,9 +10,9 @@ CONFIG -= qt
 TARGET = UE4 
 
 unrealRootPath=/home/preet/GameEngine/UnrealEngine
-battletankRootPath=/home/preet/Unreal Projects/battletank
+battletankRootPath=/media/preet/PD2TB/Unreal Projects/battletank
 
-gameProjectFile=/home/preet/Unreal Projects/battletank/battletank.uproject
+gameProjectFile=/media/preet/PD2TB/Unreal Projects/battletank/battletank.uproject
 build=mono $$unrealRootPath/Engine/Binaries/DotNET/UnrealBuildTool.exe
 
 args=$(ARGS)
