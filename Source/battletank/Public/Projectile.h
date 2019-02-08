@@ -12,6 +12,8 @@
 
 class URadialForceComponent;
 class UParticleSystemComponent;
+class UGameplayStatics;
+class UDamageType;
 
 UCLASS()
 class BATTLETANK_API AProjectile : public AActor
@@ -40,6 +42,9 @@ protected:
 
     UPROPERTY(EditDefaultsOnly, Category = "Setup")
     float DestroyDelay = 10.0;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	float ProjectileDamage = 20.0;
 
     UFUNCTION()
     void OnTimerExpire();
