@@ -11,6 +11,18 @@ void ATankAIController::BeginPlay()
 	Super::BeginPlay();
 }
 
+void ATankAIController::SetPawn(APawn* InPawn)
+{
+	Super::SetPawn(InPawn);
+	if (InPawn)
+	{
+		auto PossessedTank = Cast<ATank>(InPawn);
+		if (!ensure(PossessedTank)) { return; }
+		PossessedTank->OnDeath.AddUniqueDynamic(this, &ATankAIController::OnPossedTankDeath);
+
+	}
+}
+
 void ATankAIController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -25,4 +37,9 @@ void ATankAIController::Tick(float DeltaTime)
 	if ((AimingComponent->GetFiringStatus() == EFiringStatus::Locked) || (AimingComponent->GetFiringStatus() == EFiringStatus::Aiming))
 	{AimingComponent->Fire();}
 
+}
+
+void ATankAIController::OnPossedTankDeath()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Received"));
 }
