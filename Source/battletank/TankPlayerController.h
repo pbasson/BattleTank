@@ -11,6 +11,7 @@
 #include "TankPlayerController.generated.h"
 
 class UTankAimingComponent; 
+class ATank;
 
 UCLASS()
 class BATTLETANK_API ATankPlayerController : public APlayerController
@@ -23,7 +24,9 @@ protected:
 	
 	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
 	void FoundAimingComponent(UTankAimingComponent* AimComp);
-    
+
+    UFUNCTION()
+    void OnPossedTankDeath();
     
 private:
     virtual void BeginPlay() override;
@@ -42,5 +45,7 @@ private:
 	float CrossHairXLocation = 0.5; 
 
     UPROPERTY(EditDefaultsOnly)
-	float CrossHairYLocation = 0.33333;
-};
+    float CrossHairYLocation = 0.33333;
+
+    void SetPawn(APawn *InPawn);
+    };
