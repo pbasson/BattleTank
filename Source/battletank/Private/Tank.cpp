@@ -8,7 +8,14 @@
 
 float ATank::GetHealthPercent() const
 {
-	return (float)CurrentHealth / (float)StartingHealth;
+    return (float)CurrentHealth / (float)StartingHealth;
+}
+
+void ATank::BeginPlay()
+{
+    Super::BeginPlay();
+    CurrentHealth = StartingHealth;
+
 }
 
 // Sets default values
@@ -30,7 +37,7 @@ float ATank::TakeDamage(float DamageAmount, FDamageEvent const & DamageEvent, AC
 	}
 
 
-	UE_LOG(LogTemp, Warning, TEXT("Current Health: %i"), CurrentHealth);
+    UE_LOG(LogTemp, Warning, TEXT("%s Current Health: %i"),*GetNameSafe(this) ,CurrentHealth);
 
 	return DamageToApply;
 }
