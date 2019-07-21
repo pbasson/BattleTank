@@ -2,7 +2,8 @@
 
 ## Objective 
 
-
+This is a Tank game that can move forwards/backwards and having the barrel move 360 while also being able to lock-On.
+The game has enemies such as other Tanks and mortors
 
 
 
