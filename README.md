@@ -1,75 +1,23 @@
-# BattleTank
+# Battle Tank By Preetpal Basson
 
-## Objective 
+## Overview
 
-This is a Tank game that can move forwards/backwards and having the barrel move 360 while also being able to lock-On.
-The game has enemies such as other Tanks and mortors
+This tank game allows movement, 360° barrel rotation, and lock-on targeting. It features enemies like tanks and mortars, created in Unreal Engine.
 
+## Features
 
+| Languages |
+|---|
+| C++ |
 
--------------------------------------------###Tank Setup###------------------------------------------
+### Controls
 
+| Controls |
+|---|
+| Forward |       
+| Backward |
+| Rotate Body (Left/Right) |
+| Rotate Turret |
+| Elevate Barrel | 
 
-----------------------####Barrel Elevates####--------------------
-
-
-+ [Tank Controller]: {}
-+ []: {}
-+ []: {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--------------------------------------------###Controls###------------------------------------------
-  
-| Intention   | Manual Control | Fly-by-Wire Control | Actuator
-  
-+ Forward       
-+ Backward
-+ Rotate Body (Left/Right)
-+ Rotate Turret
-+ Elevate Barrel 
-    
------------------------####Buttons###----------------------
-        
-+ [Button Y]: {} 
-+ [Button X]: {}
-+ [Button A]: {}
-+ [Button B]: {} 
-
-----------------------####Shoulders####--------------------
-
-+ [LB:Left Button]: {} 
-+ [LT:Left Trigger]: {}
-+ [RB:Right Button]: {}
-+ [RT:Right Trigger]: {}
-
-------------------####Sticks####------------------
-
-+ [Left Stick]: {}
-+ [Left Stick Button]: {}
-+ [Right Stick]: {}
-+ [Right Stick Button]: {}
-
-------------------####DirectionalPad####-------------------
-
-+ [Direct Up]: {}
-+ [Direct Down]: {}
-+ [Direct Left]: {}
-+ [Direct Right]: {}
-
--------------------####System####-------------------
-
-+ [Start Button]: {} 
-+ [Back Button]: {}
+# END
